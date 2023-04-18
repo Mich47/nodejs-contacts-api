@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const { enums } = require("../constants");
 const { jwtToken } = require("../helpers");
 const gravatar = require("gravatar");
-const uuid = require("uuid").v4;
+const { v4: uuid } = require("uuid");
 
 const userModel = new Schema({
   name: {
