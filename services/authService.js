@@ -9,14 +9,14 @@ const { emailService } = require(".");
  * Create new user
  * @returns Object of user data
  */
-const signup = async ({ email, password }) => {
-  const newUser = await User.create({ email, password });
+const signup = async ({ name, email, password }) => {
+  const newUser = await User.create({ name, email, password });
 
   const { subscription, verificationToken } = newUser;
 
   await emailService.sendVerificationEmail({ email, verificationToken });
 
-  return { email, subscription };
+  return { name, email, subscription };
 };
 
 /**

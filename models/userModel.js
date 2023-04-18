@@ -6,6 +6,10 @@ const gravatar = require("gravatar");
 const uuid = require("uuid").v4;
 
 const userModel = new Schema({
+  name: {
+    type: String,
+    required: [true, "Set name for user"],
+  },
   password: {
     type: String,
     required: [true, "Set password for user"],
