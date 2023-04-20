@@ -4,7 +4,7 @@ const { getValidationErrorMessage, AppError } = require("../../helpers");
 
 const checkAuthData = (req, _, next) => {
   const schema = Joi.object({
-    name: Joi.string().regex(joiRegex.NAME_REGEX).min(3).max(60).required(),
+    name: Joi.string().regex(joiRegex.NAME_REGEX).min(3).max(60),
     password: Joi.string().regex(joiRegex.PASSWORD_REGEX).required(),
     email: Joi.string()
       .email({ tlds: { allow: false } })

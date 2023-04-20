@@ -41,7 +41,7 @@ router.patch(
 
 router.post("/logout", authCtrl.logoutUser);
 
-router.post("/current", authCtrl.getCurrentUser);
+router.get("/current", authCtrl.getCurrentUser);
 
 router.patch(
   "/avatars",
