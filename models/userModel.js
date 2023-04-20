@@ -48,7 +48,8 @@ const userModel = new Schema({
  */
 userModel.pre("validate", async function (next) {
   if (this.isNew) {
-    this.verificationToken = uuid().replaceAll("-", "");
+    this.verificationToken = uuid().replace(/-./g, "");
+    console.log("this.verificationToken ", this.verificationToken);
   }
 
   next();
